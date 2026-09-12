@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyBank - Digital Banking Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <span>MyBank</span>
+        </div>
+
+
+        <nav class="nav-menu">
+
+            <p class="menu-title">MAIN MENU</p>
+
+            <a href="#" class="nav-link active" data-page="Dashboard">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="Accounts">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Accounts</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="Transactions">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <span>Transactions</span>
+            </a>
+
+            <a href="#" class="nav-link" id="nav-transfer" data-page="Transfer">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Transfer</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="Analytics">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+
+            <p class="menu-title second-title">OTHER</p>
+
+            <a href="#" class="nav-link" id="nav-notifications" data-page="Notifications">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+                <span class="notification-count" id="notification-count">3</span>
+            </a>
+
+            <a href="#" class="nav-link" data-page="Settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box" id="help-box" style="cursor: pointer;">
+
+                <div class="help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div>
+                    <h4>Need Help?</h4>
+                    <p>Contact support</p>
+                </div>
+
+            </div>
+
+
+            <a href="#" class="nav-link logout" id="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                <i class="fa-solid fa-building-columns"></i>
+                MyBank
+            </div>
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="search-input" placeholder="Search transactions...">
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-button" id="notification-btn" title="View Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="profile-image">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+                        <h4>Aritra</h4>
+                        <p>Personal Account</p>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- Welcome -->
+
+            <div class="welcome-section">
+
+                <div>
+                    <p class="welcome-small" id="current-date-time">Tuesday, September 8, 2026</p>
+
+                    <h1>
+                        <span id="greeting-text">Good Evening,</span>
+                        <span>Aritra 👋</span>
+                    </h1>
+
+                    <p class="welcome-text">
+                        Here's what's happening with your money today.
+                    </p>
+                </div>
+
+
+                <button class="primary-button" id="add-money-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Money
+                </button>
+
+            </div>
+
+
+            <!-- ================= BALANCE CARDS ================= -->
+
+            <div class="stats-grid">
+
+
+                <!-- Balance -->
+
+                <div class="balance-card">
+
+                    <div class="card-top">
+
+                        <div>
+                            <p>Total Balance</p>
+
+                            <h2 id="total-balance">₹45,280.00</h2>
+                        </div>
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <span class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            8.4%
+                        </span>
+
+                        <span>vs last month</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Income -->
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon income">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+
+                        <span class="stat-label">Income</span>
+
+                    </div>
+
+                    <h2 id="total-income">₹30,000.00</h2>
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            12.5%
+                        </span>
+
+                        <span>vs last month</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Expense -->
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon expense">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+
+                        <span class="stat-label">Expenses</span>
+
+                    </div>
+
+                    <h2 id="total-expenses">₹12,450.00</h2>
+
+                    <div class="stat-footer">
+
+                        <span class="negative">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            4.2%
+                        </span>
+
+                        <span>vs last month</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Savings -->
+
+                <div class="stat-card">
+
+                    <div class="stat-header">
+
+                        <div class="stat-icon savings">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+
+                        <span class="stat-label">Savings</span>
+
+                    </div>
+
+                    <h2 id="total-savings">₹17,550.00</h2>
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            15.8%
+                        </span>
+
+                        <span>vs last month</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MIDDLE SECTION ================= -->
+
+            <div class="middle-grid">
+
+
+                <!-- Spending Chart -->
+
+                <div class="dashboard-card chart-card">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Spending Overview</h3>
+                            <p>Your spending activity this week</p>
+                        </div>
+
+                        <select id="chart-filter">
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="year">This Year</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="chart-values">
+
+                            <span>₹5k</span>
+                            <span>₹4k</span>
+                            <span>₹3k</span>
+                            <span>₹2k</span>
+                            <span>₹1k</span>
+                            <span>₹0</span>
+
+                        </div>
+
+
+                        <div class="chart-area">
+
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+
+
+                            <div class="bars" id="chart-bars">
+
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 35%;"></div>
+                                    <span>Mon</span>
+                                </div>
+
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 55%;"></div>
+                                    <span>Tue</span>
+                                </div>
+
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 40%;"></div>
+                                    <span>Wed</span>
+                                </div>
+
+                                <div class="bar-container">
+                                    <div class="bar active-bar" style="height: 78%;"></div>
+                                    <span>Thu</span>
+                                </div>
+
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 62%;"></div>
+                                    <span>Fri</span>
+                                </div>
+
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 45%;"></div>
+                                    <span>Sat</span>
+                                </div>
+
+                                <div class="bar-container">
+                                    <div class="bar" style="height: 28%;"></div>
+                                    <span>Sun</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Actions -->
+
+                <div class="dashboard-card quick-card">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Quick Actions</h3>
+                            <p>Manage your money</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <button class="quick-action" id="transfer-money-btn">
+
+                            <div class="quick-icon transfer">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </div>
+
+                            <span>Transfer</span>
+
+                        </button>
+
+
+                        <button class="quick-action" id="deposit-money-btn">
+
+                            <div class="quick-icon deposit">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+
+                            <span>Deposit</span>
+
+                        </button>
+
+
+                        <button class="quick-action" id="withdraw-money-btn">
+
+                            <div class="quick-icon withdraw">
+                                <i class="fa-solid fa-minus"></i>
+                            </div>
+
+                            <span>Withdraw</span>
+
+                        </button>
+
+
+                        <button class="quick-action" id="pay-bills-btn">
+
+                            <div class="quick-icon bill">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+
+                            <span>Pay Bills</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= BOTTOM SECTION ================= -->
+
+            <div class="bottom-grid">
+
+
+                <!-- Recent Transactions -->
+
+                <div class="dashboard-card transactions-card">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Recent Transactions</h3>
+                            <p>Your latest account activity</p>
+                        </div>
+
+                        <a href="#" class="view-all" id="view-all-btn">
+                            View All
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="transactions-list" id="transactions-list">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Spending Categories -->
+
+                <div class="dashboard-card categories-card">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Spending Categories</h3>
+                            <p>This month's expenses</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-list" id="category-list">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <!-- DEPOSIT MODAL -->
+
+    <div class="modal" id="deposit-modal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <h2>Add Money</h2>
+
+            <p class="modal-subtitle">
+                Add money to your bank account
+            </p>
+
+            <form id="deposit-form">
+
+                <label for="deposit-amount">
+                    Amount
+                </label>
+
+                <div class="amount-input">
+
+                    <span>₹</span>
+
+                    <input type="number" id="deposit-amount" placeholder="Enter amount" min="1" required>
+
+                </div>
+
+                <p class="error-message" id="deposit-error"></p>
+
+                <button type="submit" class="deposit-btn">
+                    Deposit Money
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Withdraw Modal -->
+
+    <div class="modal" id="withdraw-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-withdraw-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+
+            <h2>Withdraw Money</h2>
+
+            <p class="modal-subtitle">
+                Withdraw money from your bank account
+            </p>
+
+            <form id="withdraw-form">
+                <label for="withdraw-amount">
+                    Amount
+                </label>
+
+                <div class="amount-input">
+                    <span>₹</span>
+
+                    <input type="number" id="withdraw-amount" placeholder="Enter amount" min="1" required>
+                </div>
+
+                <p class="error-message" id="withdraw-error"></p>
+
+                <button type="submit" class="deposit-btn">
+                    Withdraw Money
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Transfer modal -->
+
+    <div class="modal" id="transfer-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-transfer-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+
+            <h2>Transfer Money</h2>
+
+            <p class="modal-subtitle">
+                Send money to another account
+            </p>
+
+            <form id="transfer-form">
+                <label for="recipient-name">
+                    Recipient Name
+                </label>
+
+                <input type="text" id="recipient-name" placeholder="Enter recipient name" required>
+
+                <label for="account-number">Account Number</label>
+
+                <input type="text" id="account-number" placeholder="Enter account number" maxlength="16" required>
+
+                <label for="transfer-amount">Amount</label>
+
+                <div class="amount-input">
+                    <span>₹</span>
+
+                    <input type="number" id="transfer-amount" placeholder="Enter amount" min="1" required>
+                </div>
+
+                <p class="error-message" id="transfer-error"></p>
+
+                <button type="submit" class="deposit-btn">
+                    Transfer Money
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Pay Bills Modal -->
+
+    <div class="modal" id="bill-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-bill-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon" style="background: #fff7e7; color: #e59b19;">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <h2>Pay Bills</h2>
+
+            <p class="modal-subtitle">
+                Pay electricity, internet, or utility bills
+            </p>
+
+            <form id="bill-form">
+                <label for="bill-type">Biller Category</label>
+                <select id="bill-type" required>
+                    <option value="Electricity">Electricity Bill</option>
+                    <option value="Internet">Internet / Wi-Fi</option>
+                    <option value="Mobile Recharge">Mobile Recharge</option>
+                    <option value="Water Bill">Water Bill</option>
+                    <option value="Gas Bill">Gas Cylinder / Pipeline</option>
+                </select>
+
+                <label for="bill-account">Consumer / Account ID</label>
+                <input type="text" id="bill-account" placeholder="Enter Consumer ID (e.g. 10023456)" required>
+
+                <label for="bill-amount">Amount</label>
+                <div class="amount-input">
+                    <span>₹</span>
+                    <input type="number" id="bill-amount" placeholder="Enter bill amount" min="1" required>
+                </div>
+
+                <p class="error-message" id="bill-error"></p>
+
+                <button type="submit" class="deposit-btn">
+                    Pay Bill Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

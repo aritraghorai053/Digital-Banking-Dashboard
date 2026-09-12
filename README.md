@@ -96,9 +96,8 @@ This project helped practice:
 
 Add your project screenshots here:
 
-```md
-![Dashboard Screenshot](screenshots/dashboard.png)
-```
+<img width="1920" height="1080" alt="Screenshot 2026-09-13 000930" src="https://github.com/user-attachments/assets/d72acedc-54ce-4a35-8900-edb5590d0d1f" />
+
 
 ## 🔮 Future Improvements
 

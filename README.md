@@ -3,10 +3,13 @@
 A modern and responsive **Digital Banking Dashboard** built using HTML, CSS, and JavaScript.
 
 This project simulates a simple banking application where users can manage their balance, deposit money, withdraw money, transfer money, and view transactions dynamically.
+## 🌐 Live Demo
+
+👉 https://aritraghorai053.github.io/Digital-Banking-Dashboard/
 
 ## 🚀 Features
 
-- 📊 **Dashboard Overview**
+- 📊 **Dashboard Overview**https://aritraghorai053.github.io/Digital-Banking-Dashboard/
   - Total balance
   - Total income
   - Total expenses
@@ -60,7 +63,6 @@ Digital-Banking-Dashboard/
 ├── style.css
 ├── script.js
 ├── README.md
-└── assets/
 ```
 
 > The exact folder structure may vary depending on your project setup.

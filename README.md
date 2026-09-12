@@ -9,7 +9,7 @@ This project simulates a simple banking application where users can manage their
 
 ## 🚀 Features
 
-- 📊 **Dashboard Overview**https://aritraghorai053.github.io/Digital-Banking-Dashboard/
+- 📊 **Dashboard Overview**
   - Total balance
   - Total income
   - Total expenses
